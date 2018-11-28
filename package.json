@@ -1,0 +1,23 @@
+{
+  "name": "product-builder",
+  "version": "1.0.0",
+  "description": "Product Builder =========",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodyHouse/product-builder.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodyHouse/product-builder/issues"
+  },
+  "homepage": "https://github.com/CodyHouse/product-builder#readme",
+  "dependencies": {
+    "node-sass": "^4.10.0"
+  }
+}
