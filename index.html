@@ -7,19 +7,19 @@
 	<link rel="stylesheet" href="css/vendor/reset.css"> <!-- CSS reset -->
 	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
 
-	<title>Checkout Example - Horizontal Steps</title>
+	<title>Ui-example: Guidat Sök</title>
 </head>
 <body>
 <div class="cd-product-builder">
 	<header class="main-header">
-		<h1>Checkout</h1>
+		<h1>Upptäck rätt resmål för din kryssning</h1>
 
 		<nav class="cd-builder-main-nav disabled">
 			<ul>
-				<li class="active"><a href="#models">Models</a></li>
-				<li><a href="#colors">Colors</a></li>
-				<li><a href="#accessories">Accessories</a></li>
-				<li><a href="#summary">Summary</a></li>
+				<li class="active"><a href="#models">Vad vill du se?</a></li>
+				<li><a href="#colors">Vilken årstid?</a></li>
+				<li><a href="#accessories">Resans längd?</a></li>
+				<li><a href="#summary">Din budget?</a></li>
 			</ul>
 		</nav>
 
@@ -30,24 +30,74 @@
 			<li data-selection="models" class="active builder-step">
 				<section class="cd-step-content">
 					<header>
-						<h1>Select Model</h1>
-						<span class="steps-indicator">Step <b>1</b> of 4</span>
+						<h1>Vad vill du se?</h1>
+						<span class="steps-indicator">Steg <b>1</b> av 4</span>
 					</header>
 
-					<ul class="models-list options-list cd-col-2">
-						<li class="js-option js-radio" data-price="42400" data-model="product-01">
-							<span class="name">BMW i3</span>
-							<img src="img/product01_col01.jpg" alt="BMW i3">
-							<span class="price">from $42.400</span>
+					<ul class="models-list options-list cd-col-3">
+						<li class="js-option js-radio" data-price="400" data-model="product-01">
+							<span class="name">Sol & strand</span>
+							<!-- <img src="img/product01_col01.jpg" alt="BMW i3"> -->
+							<!-- <span class="price">from $42.400</span> -->
 							<div class="radio"></div>
 						</li>
 
-						<li class="js-option js-radio" data-price="140700" data-model="product-02">
-							<span class="name">BMW i8</span>
-							<img src="img/product02_col01.jpg" alt="BMW i8">
-							<span class="price">from $140.700</span>
+						<li class="js-option js-radio" data-price="500" data-model="product-01">
+							<span class="name">Fjäll och Fjordar</span>
+							<!-- <img src="img/product02_col01.jpg" alt="BMW i8"> -->
+							<!-- <span class="price">from $140.700s</span> -->
 							<div class="radio"></div>
 						</li>
+
+						<li class="js-option js-radio" data-price="600" data-model="product-01">
+							<span class="name">Storstäder</span>
+							<!-- <img src="img/product01_col01.jpg" alt="BMW i3"> -->
+							<!-- <span class="price">from $42.400</span> -->
+							<div class="radio"></div>
+						</li>
+
+						<li class="js-option js-radio" data-price="700" data-model="product-01">
+							<span class="name">Natur och Djurliv</span>
+							<!-- <img src="img/product02_col01.jpg" alt="BMW i8"> -->
+							<!-- <span class="price">from $140.700s</span> -->
+							<div class="radio"></div>
+						</li>
+
+						<li class="js-option js-radio" data-price="800" data-model="product-01">
+							<span class="name">Flodkryssningar</span>
+							<!-- <img src="img/product01_col01.jpg" alt="BMW i3"> -->
+							<!-- <span class="price">from $42.400</span> -->
+							<div class="radio"></div>
+						</li>
+
+						<li class="js-option js-radio" data-price="900" data-model="product-01">
+							<span class="name">Fantastiska Skepp</span>
+							<!-- <img src="img/product02_col01.jpg" alt="BMW i8"> -->
+							<!-- <span class="price">from $140.700s</span> -->
+							<div class="radio"></div>
+						</li>
+
+						<li class="js-option js-radio" data-price="1000" data-model="product-01">
+							<span class="name">Historia</span>
+							<!-- <img src="img/product01_col01.jpg" alt="BMW i3"> -->
+							<!-- <span class="price">from $42.400</span> -->
+							<div class="radio"></div>
+						</li>
+
+						<li class="js-option js-radio" data-price="1100" data-model="product-01">
+							<span class="name">Exotisk Miljö</span>
+							<!-- <img src="img/product02_col01.jpg" alt="BMW i8"> -->
+							<!-- <span class="price">from $140.700s</span> -->
+							<div class="radio"></div>
+						</li>
+
+						<li class="js-option js-radio" data-price="1200" data-model="product-01">
+							<span class="name">Populärt</span>
+							<!-- <img src="img/product02_col01.jpg" alt="BMW i8"> -->
+							<!-- <span class="price">from $140.700s</span> -->
+							<div class="radio"></div>
+						</li>
+
 					</ul>
 				</section>
 			</li>
@@ -60,8 +110,8 @@
 			<img src="img/product01_col01.jpg" alt="Product preview">
 
 			<div class="tot-price">
-				<span>Total</span>
-				<span class="total">$<b>0</b></span>
+				<span>Valt</span>
+				<span class="total"><b>?</b></span>
 			</div>
 		</div>
 
@@ -69,27 +119,29 @@
 			<ul>
 				<li class="next nav-item">
 					<ul>
-						<li class="visible"><a href="#0">Colors</a></li>
-						<li><a href="#0">Accessories</a></li>
-						<li><a href="#0">Summary</a></li>
-						<li class="buy"><a href="#0">Buy Now</a></li>
+						<li class="visible"><a href="#0">Sök på Tema</a></li>
+						<li><a href="#0">Årstid</a></li>
+						<li><a href="#0">Antal Nätter</a></li>
+						<li class="buy"><a href="#0">Sök din Kryssning</a></li>
 					</ul>
 				</li>
 				<li class="prev nav-item">
 					<ul>
-						<li class="visible"><a href="#0">Models</a></li>
-						<li><a href="#0">Models</a></li>
-						<li><a href="#0">Colors</a></li>
-						<li><a href="#0">Accessories</a></li>
+						<li class="visible"><a href="#0">Resmål</a></li>
+						<li><a href="#0">Resmål</a></li>
+						<li><a href="#0">Årstid</a></li>
+						<li><a href="#0">Antal Nätter</a></li>
 					</ul>
 				</li>
 			</ul>
 		</nav>
 
-		<span class="alert">Please, select a model first!</span>
+		<span class="alert">Välj ett resmål!</span>
 	</footer>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js">
+	</script>
 <script>
 	if( !window.jQuery ) document.write('<script src="js/jquery-3.0.0.min.js"><\/script>');
 </script>

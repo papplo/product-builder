@@ -4,10 +4,10 @@ jQuery(document).ready(function($){
 		this.stepsWrapper = this.element.children('.cd-builder-steps');
 		this.steps = this.element.find('.builder-step');
 		//store some specific bulider steps
-		this.models = this.element.find('[data-selection="models"]'); 
+		this.models = this.element.find('[data-selection="models"]');
 		this.summary;
 		this.optionsLists = this.element.find('.options-list');
-		//bottom summary 
+		//bottom summary
 		this.fixedSummary = this.element.find('.cd-builder-footer');
 		this.modelPreview = this.element.find('.selected-product').find('img');
 		this.totPriceWrapper = this.element.find('.tot-price').find('b');
@@ -16,7 +16,7 @@ jQuery(document).ready(function($){
 		this.secondaryNavigation = this.element.find('.cd-builder-secondary-nav');
 		//used to check if the builder content has been loaded properly
 		this.loaded = true;
-		
+
 		// bind builder events
 		this.bindEvents();
 	}
@@ -31,7 +31,7 @@ jQuery(document).ready(function($){
 		});
 
 		//detect click on bottom fixed navigation
-		this.secondaryNavigation.on('click', '.nav-item li:not(.buy)', function(event){ 
+		this.secondaryNavigation.on('click', '.nav-item li:not(.buy)', function(event){
 			event.preventDefault();
 			var stepNumber = ( $(this).parents('.next').length > 0 ) ? $(this).index() + 1 : $(this).index() - 1;
 			self.loaded && self.newContentSelected(stepNumber);
@@ -53,7 +53,7 @@ jQuery(document).ready(function($){
 			//no model has been selected - show alert
 			this.fixedSummary.addClass('show-alert');
 		} else {
-			//model has been selected so show new content 
+			//model has been selected so show new content
 			//first check if the color step has been completed - in this case update the product bottom preview
 			if( this.steps.filter('.active').is('[data-selection="colors"]') ) {
 				//in this case, color has been changed - update the preview image
@@ -64,7 +64,7 @@ jQuery(document).ready(function($){
 			if( nextStep + 1 >= this.steps.length ) {
 				this.createSummary();
 			}
-			
+
 			this.showNewContent(nextStep);
 			this.updatePrimaryNav(nextStep);
 			this.updateSecondaryNav(nextStep);
@@ -106,7 +106,7 @@ jQuery(document).ready(function($){
 					color = colorSelected.children('a').data('color'),
 					colorName = colorSelected.data('content'),
 					imageSelected = $(this).find('.cd-product-previews').find('.selected img').attr('src');
-				
+
 				self.summary.find('.summary-color').find('.color-label').text(colorName).siblings('.color-swatch').attr('data-color', color);
 				self.summary.find('.product-preview').attr('src', imageSelected);
 			} else if( $(this).data('selection') == 'accessories' ) {
@@ -114,7 +114,7 @@ jQuery(document).ready(function($){
 					optionsContent = '';
 
 				if( selectedOptions.length == 0 ) {
-					optionsContent = '<li><p>No Accessories selected;</p></li>';
+					optionsContent = '<li><p>Alla reslängder</p></li>';
 				} else {
 					selectedOptions.each(function(){
 						optionsContent +='<li><p>'+$(this).find('p').text()+'</p></li>';
@@ -128,14 +128,14 @@ jQuery(document).ready(function($){
 
 	ProductBuilder.prototype.updateListOptions = function(listItem) {
 		var self = this;
-		
+
 		if( listItem.hasClass('js-radio') ) {
 			//this means only one option can be selected (e.g., models) - so check if there's another option selected and deselect it
 			var alreadySelectedOption = listItem.siblings('.selected'),
 				price = (alreadySelectedOption.length > 0 ) ? -Number(alreadySelectedOption.data('price')) : 0;
 
 			//if the option was already selected and you are deselecting it - price is the price of the option just clicked
-			( listItem.hasClass('selected') ) 
+			( listItem.hasClass('selected') )
 				? price = -Number(listItem.data('price'))
 				: price = Number(listItem.data('price')) + price;
 
@@ -153,7 +153,7 @@ jQuery(document).ready(function($){
 			//update totalPrice
 			self.updatePrice(price);
 		}
-		
+
 		if( listItem.parents('[data-selection="models"]').length > 0 ) {
 			//since a model has been selected/deselected, you need to update the builder content
 			self.updateModelContent(listItem);
@@ -220,7 +220,7 @@ jQuery(document).ready(function($){
 	ProductBuilder.prototype.customizeModel = function(target) {
 		var parent = target.parent('li')
 			index = parent.index();
-		
+
 		//update final price
 		var price = ( parent.hasClass('selected') )
 			? 0

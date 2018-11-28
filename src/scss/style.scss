@@ -278,14 +278,14 @@ Step content - basic style
 			margin-bottom: 2%;
 		}
 
-		.options-list.cd-col-2 {
+		.options-list.cd-col-3 {
 			@include clearfix;
 
 			> li {
-				@include column(.48);
-				margin-right: 4%;
+				@include column(.31);
+				margin-right: 3.5%;
 
-				&:nth-of-type(2n) {
+				&:nth-of-type(3n) {
 					margin-right: 0;
 				}
 			}
@@ -394,9 +394,10 @@ Models Step - style
 
 	.name {
 		display: block;
-		font-size: 3.2rem;
+		font-size: 2rem;
 		font-weight: bold;
 		margin-top: .2em;
+		margin-bottom: 1em;
 	}
 
 	img {
@@ -774,9 +775,22 @@ Builder top navigation
 -------------------------------- */
 
 .cd-product-builder .main-header {
-	display: none;
+	display: block;
+
+	& .cd-builder-main-nav {
+		display: none;
+	}
+
+	h1 {
+		display: block;
+		font-size: 1.4em;
+		margin: 1em auto;
+	}
 
 	@include MQ(L) {
+		& .cd-builder-main-nav {
+			display: block;
+		}
 		display: block;
 		position: fixed;
 		z-index: 3;
