@@ -5,22 +5,24 @@
 			<span class="steps-indicator">Steg <b>2</b> av 4</span>
 		</header>
 
-		<ul class="cd-product-customizer">
-			<li data-content="Sommar" data-price="0" class="selected">
-				<a data-color="summer" href="#0">2019-06-01</a></li>
-			<li data-content="Höst" data-price="550">
-				<a data-color="fall" href="#0">2019-09-01</a></li>
-			<li data-content="Vinter" data-price="550">
-				<a data-color="winter" href="#0">2019-12-01</a></li>
-			<li data-content="Vår" data-price="550">
-				<a data-color="spring" href="#0">2019-01-01</a></li>
-		</ul>
-		<ul class="cd-product-previews">
-			<li class="selected"><img src="img/product01_col011.jpg" alt="Product Preview" class="product-preview"></li>
-			<li><img src="img/product01_col044.jpg" alt="Product Preview" class="product-preview"></li>
-			<li><img src="img/product01_col022.jpg" alt="Product Preview" class="product-preview"></li>
-			<li><img src="img/product01_col033.jpg" alt="Product Preview" class="product-preview"></li>
-		</ul>
+		<div class="container-overlay">
+			<ul class="cd-product-previews">
+				<li class="selected"><img src="img/product01_col011.jpg" alt="Product Preview" class="product-preview"></li>
+				<li><img src="img/product01_col044.jpg" alt="Product Preview" class="product-preview"></li>
+				<li><img src="img/product01_col022.jpg" alt="Product Preview" class="product-preview"></li>
+				<li><img src="img/product01_col033.jpg" alt="Product Preview" class="product-preview"></li>
+			</ul>
+			<ul class="cd-product-customizer">
+				<li data-content="Sommar" data-price="0" class="selected">
+					<a data-color="summer" href="#0">2019-06-01</a></li>
+				<li data-content="Höst" data-price="550">
+					<a data-color="fall" href="#0">2019-09-01</a></li>
+				<li data-content="Vinter" data-price="550">
+					<a data-color="winter" href="#0">2019-12-01</a></li>
+				<li data-content="Vår" data-price="550">
+					<a data-color="spring" href="#0">2019-01-01</a></li>
+			</ul>
+		</div>
 	</section>
 </li>
 
@@ -70,53 +72,61 @@
 <li data-selection="summary" class="builder-step first-load">
 	<section class="cd-step-content">
 		<header>
-			<h1>Summary</h1>
-			<span class="steps-indicator">Step <b>4</b> of 4</span>
+			<h1>Sök din kryssning</h1>
+			<span class="steps-indicator">Steg <b>4</b> av 4</span>
 		</header>
 
 		<ul class="summary-list">
 			<li>
-				<h2>Guidad sökning</h2>
+				<h2>Ange pris per passagerare</h2> 
+				<div class="range-slider">
+				  <input class="range-slider__range" type="range" value="10000" min="5000" max="50000" step="10000">
+					<span class="range-slider__value">Upp till 5000</span>
+				</div>
+				<script>
+					rangeSlider();
+				</script>
+				<!-- <img src="img/product01_col011.jpg" alt="Sommarkryssning" class="product-preview"> -->
 
-				<img src="img/product01_col011.jpg" alt="Sommarkryssning" class="product-preview">
+				<!-- <li data-summary="colors">
+					<h2>Årstid</h2>
 
-				<h2>Sökning som genereras mot API:</h2>
-				<!-- <p>
-					Dreamlake söker din drömkryssning just nu! Här är dina preferenser:
-				</p> -->
-				<ul class="sokstring">
-					<li><p>facetFilter: RegionHierarchical.Level1: <em>Caribbean, South America, Mediterranean, South Pacific </em></p></li>
-					<li><p>query: <em>Tema: Sol & Strand</em></p></li>
-					<li><p>dateFilter: dateFrom: <em>2019-02-01</em></p></li>
-					<li><p>dateFilter: dateTo: <em>2019-05-01</em></p></li>
-					<li><p>facetFilter: 5BSuperStateroomType: <em>all types</em></p></li>
-					<li><p>facetFilter: 5BSuperStateroomType: <em>all types</em></p></li>
-					<li><p>numericalFilter: NrOfNights: <em>From 1 to 4</em></p></li>
-					<li><p>numericalFilter: MaxAmount: <em>From 0 to 50000</em></p></li>
-					<li><p>pageSize: <em>10</em></p></li>
-					<li><p>sortBy: <em>default</em></p></li>
+					<span class="summary-color">
+						<em class="color-swatch" data-color="sommar"></em>
+						<em class="color-label">Sommar</em>
+					</span>
+				</li>
+
+				<li data-summary="accessories">
+					<h2>Resans längd</h2>
+
+					<ul class="summary-accessories">
+						<li>
+							<p>Antal Nätter</p>
+						</li>
+					</ul>
+				</li>
+				<li> -->
+					<h2>Sökning som genereras mot API:</h2>
+					<!-- <p>
+						Dreamlake söker din drömkryssning just nu! Här är dina preferenser:
+					</p> -->
+					<ul class="sokstring">
+						<li><p>facetFilter: RegionHierarchical.Level1: <em>Caribbean, South America, Mediterranean, South Pacific </em></p></li>
+						<li><p>query: <em>Tema: Sol & Strand</em></p></li>
+						<li><p>dateFilter: dateFrom: <em>2019-02-01</em></p></li>
+						<li><p>dateFilter: dateTo: <em>2019-05-01</em></p></li>
+						<li><p>facetFilter: 5BSuperStateroomType: <em>all types</em></p></li>
+						<li><p>facetFilter: 5BSuperStateroomType: <em>all types</em></p></li>
+						<li><p>numericalFilter: NrOfNights: <em>From 1 to 4</em></p></li>
+						<li><p>numericalFilter: MaxAmount: <em>From 0 to 50000</em></p></li>
+						<li><p>pageSize: <em>10</em></p></li>
+						<li><p>sortBy: <em>default</em></p></li>
 
 					</ul>
-			</li>
+				</li>
+				</li>
 
-			<li data-summary="colors">
-				<h2>Årstid</h2>
-
-				<span class="summary-color">
-					<em class="color-swatch" data-color="yellow"></em>
-					<em class="color-label">Sommar</em>
-				</span>
-			</li>
-
-			<li data-summary="accessories">
-				<h2>Resans längd</h2>
-
-				<ul class="summary-accessories">
-					<li>
-						<p>Antal Nätter</p>
-					</li>
-				</ul>
-			</li>
 		</ul>
 	</section>
 </li>

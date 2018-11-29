@@ -8,6 +8,8 @@
 
 @import 'partials/layout'; // responsive grid and media queries
 
+@import 'partials/rangeslider';
+
 /* --------------------------------
 
 Primary style
@@ -420,6 +422,8 @@ Models Step - style
 
 .cd-builder-steps .models-list {
 	text-align: center;
+	margin: 0 auto;
+	max-width: 750px;
 
 	> li {
 		padding: 2.7em 0;
@@ -427,10 +431,11 @@ Models Step - style
 
 	.name {
 		display: block;
-		font-size: 1.6rem;
+		font-size: 1.3rem;
 		font-weight: bold;
 		margin-top: .2em;
 		margin-bottom: 1em;
+		color: $color-Headings;
 	}
 
 	img {
@@ -970,7 +975,7 @@ Builder fixed bottom summary
 		width: 100%;
 		font-size: 1.4rem;
 		font-weight: bold;
-		line-height: 56px;
+		line-height: 52px;
 		text-align: center;
 		transform: translateY(100%);
 		transition: transform .3s;
@@ -1014,7 +1019,7 @@ Builder fixed bottom summary
 			}
 
 			&.prev {
-				width: 45px;
+				width: 50px;
 				border-radius: 50%;
 				background: $color-5;
 				/* replace text with image */
