@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans+Narrow:700|PT+Sans:400,400i,700|Source+Sans+Pro:300");
 /* --------------------------------
 
 Primary style
@@ -141,8 +142,8 @@ Step content - basic style
   .cd-step-content .radio, .cd-step-content .check {
     position: relative;
     display: inline-block;
-    height: 30px;
-    width: 30px; }
+    height: 24px;
+    width: 24px; }
     .cd-step-content .radio::after, .cd-step-content .radio::before, .cd-step-content .check::after, .cd-step-content .check::before {
       /* used to create the check icon and yellow circle/square dot ( when element is selected) */
       position: absolute;
@@ -161,6 +162,8 @@ Step content - basic style
       transition: background-color .3s, transform .3s, border-color .3s; }
     .cd-step-content .radio::after, .cd-step-content .check::after {
       /* check icon */
+      display: none;
+      background-size: 10px 10px;
       background: url(../img/cd-icon-check.svg) no-repeat center center; }
   .cd-step-content .radio::before {
     border-radius: 50%; }
@@ -182,6 +185,16 @@ Step content - basic style
   .active.back .cd-step-content {
     /* this is the animation of the selected step - moving down*/
     animation: cd-left-to-center .5s .2s backwards; }
+  .cd-step-content .options-list.cd-col-3::after {
+    clear: both;
+    content: "";
+    display: block; }
+  .cd-step-content .options-list.cd-col-3 > li {
+    width: 48%;
+    float: left;
+    margin-right: 4%; }
+    .cd-step-content .options-list.cd-col-3 > li:nth-of-type(2n) {
+      margin-right: 0; }
   @media only screen and (min-width: 768px) {
     .cd-step-content header {
       margin-bottom: 2em; }
@@ -190,7 +203,8 @@ Step content - basic style
     .cd-step-content .steps-indicator {
       font-size: 2rem; }
     .cd-step-content .options-list > li {
-      margin-bottom: 2%; }
+      margin-bottom: 2%;
+      font-size: 1rem; }
     .cd-step-content .options-list.cd-col-3::after {
       clear: both;
       content: "";
@@ -199,6 +213,8 @@ Step content - basic style
       width: 31%;
       float: left;
       margin-right: 3.5%; }
+      .cd-step-content .options-list.cd-col-3 > li:nth-of-type(2n) {
+        margin-right: 3.5%; }
       .cd-step-content .options-list.cd-col-3 > li:nth-of-type(3n) {
         margin-right: 0; } }
   @media only screen and (min-width: 1024px) {
@@ -269,7 +285,7 @@ Models Step - style
     padding: 2.7em 0; }
   .cd-builder-steps .models-list .name {
     display: block;
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: bold;
     margin-top: .2em;
     margin-bottom: 1em; }
@@ -288,6 +304,8 @@ Models Step - style
     border-right-color: #FFB500;
     transform: scale(1);
     animation: cd-load .6s infinite; }
+  .cd-builder-steps .models-list .selected.loaded .radio::after {
+    display: block; }
   .cd-builder-steps .models-list .selected.loaded .radio::before {
     /* content has been loaded - show the yellow circle + check icon */
     background: #FFB500;
@@ -389,18 +407,21 @@ Colors Step - style
       height: 50px;
       width: 50px; } }
 
-[data-color="white"] {
+[data-color="winter"] {
   /* used to give background color to Color options */
   background-color: #FFFFFF; }
 
-[data-color="blue"] {
+[data-color="summer"] {
   background-color: #B3CBD2; }
 
-[data-color="orange"] {
+[data-color="fall"] {
   background-color: #F47835; }
 
-[data-color="pink"] {
+[data-color="spring"] {
   background-color: #C5637E; }
+
+[data-theme="sol-strand"] {
+  background-color: #B3CBD2; }
 
 /* --------------------------------
 
@@ -457,6 +478,11 @@ Summary Step - style
   position: relative;
   margin: 2em 0; }
 
+.cd-builder-steps .summary-list .sokstring li {
+  text-align: left;
+  margin: 0 auto;
+  max-width: 500px; }
+
 .cd-builder-steps .summary-list h2 {
   text-transform: uppercase;
   font-weight: bold;
@@ -473,13 +499,13 @@ Summary Step - style
 
 .cd-builder-steps .summary-list .product-preview {
   display: block;
-  max-width: 700px;
+  max-width: 300px;
   width: 100%;
   margin-bottom: 2em; }
 
 .cd-builder-steps .summary-list h3 {
-  font-size: 2.4rem;
-  font-weight: bold;
+  font-size: 1.4rem;
+  font-weight: normal;
   margin: .4em 0; }
 
 .cd-builder-steps .summary-list p {

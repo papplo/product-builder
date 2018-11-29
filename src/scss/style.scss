@@ -1,5 +1,7 @@
 // Note: we use Autoprefixer to add vendor prefixes to our CSS -> https://github.com/postcss/autoprefixer
 
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow:700|PT+Sans:400,400i,700|Source+Sans+Pro:300');
+
 @import 'partials/variables'; // colors, fonts etc...
 
 @import 'partials/mixins'; // custom mixins
@@ -200,8 +202,8 @@ Step content - basic style
 	.radio, .check {
 		position: relative;
 		display: inline-block;
-		height: 30px;
-		width: 30px;
+		height: 24px;
+		width: 24px;
 
 		&::after, &::before {
 			/* used to create the check icon and yellow circle/square dot ( when element is selected) */
@@ -225,6 +227,8 @@ Step content - basic style
 
 		&::after {
 			/* check icon */
+			display: none;
+			background-size: 10px 10px;
 			background: url(../img/cd-icon-check.svg) no-repeat center center;
 		}
 	}
@@ -261,6 +265,20 @@ Step content - basic style
 		animation: cd-left-to-center .5s .2s backwards;
 	}
 
+
+	.options-list.cd-col-3 {
+		@include clearfix;
+
+		> li {
+			@include column(.48);
+			margin-right: 4%;
+
+			&:nth-of-type(2n) {
+				margin-right: 0;
+			}
+		}
+	}
+
 	@include MQ(M) {
 		header {
 			margin-bottom: 2em;
@@ -276,6 +294,7 @@ Step content - basic style
 
 		.options-list > li {
 			margin-bottom: 2%;
+			font-size: 1rem;
 		}
 
 		.options-list.cd-col-3 {
@@ -285,6 +304,9 @@ Step content - basic style
 				@include column(.31);
 				margin-right: 3.5%;
 
+				&:nth-of-type(2n) {
+					margin-right: 3.5%;
+				}
 				&:nth-of-type(3n) {
 					margin-right: 0;
 				}
@@ -394,7 +416,7 @@ Models Step - style
 
 	.name {
 		display: block;
-		font-size: 2rem;
+		font-size: 1.6rem;
 		font-weight: bold;
 		margin-top: .2em;
 		margin-bottom: 1em;
@@ -421,6 +443,10 @@ Models Step - style
 		animation: cd-load .6s infinite;
 	}
 
+	.selected.loaded .radio::after {
+		display: block;
+	}
+
 	.selected.loaded .radio::before {
 		/* content has been loaded - show the yellow circle + check icon */
 		background: $color-4;
@@ -428,6 +454,8 @@ Models Step - style
 		transform: scale(1.5);
 		animation: cd-bounce .5s;
 	}
+
+
 }
 
 @keyframes cd-load {
@@ -439,140 +467,8 @@ Models Step - style
 	}
 }
 
-/* --------------------------------
 
-Colors Step - style
-
--------------------------------- */
-
-.cd-product-previews {
-	position: relative;
-	margin: 4.5em 0;
-
-	> li {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		opacity: 0;
-
-		&.selected {
-			position: relative;
-			opacity: 1;
-		}
-
-		img {
-			display: block;
-			width: 100%;
-			max-width: 750px;
-			margin: 0 auto;
-		}
-	}
-
-	@include MQ(L) {
-		margin: 0 0 2em;
-	}
-
-	@media only screen and (min-width: $XL) and (min-height: 850px) {
-		margin-bottom: 4em;
-	}
-}
-
-.cd-product-customizer {
-	text-align: center;
-
-	li {
-		position: relative;
-		display: inline-block;
-		margin-right: .5em;
-
-		&:last-of-type {
-			margin-right: 0;
-		}
-
-		&::before, &::after {
-			/* this is used as tooltip to show color name */
-			position: absolute;
-			left: 50%;
-			transform: translateX(-50%) translateY(-5px);
-			opacity: 0;
-			visibility: hidden;
-			transition: opacity .2s, visibility .2s, transform .2s;
-		}
-
-		&::before {
-			/* this is the tooltip triangle */
-			content: '';
-			bottom: 100%;
-			height: 0;
-			border: 8px solid transparent;
-			border-top-color: rgba($color-5, .8);
-			border-top-width: 10px;
-			border-top-width: 10px;
-		}
-
-		&::after {
-			/* this is the tooltip content */
-			content: attr(data-content);
-			background-color: rgba($color-5, .8);
-			white-space: nowrap;
-			padding: .7em 1.1em;
-			border-radius: 2em;
-			bottom: calc( 100% + 18px);
-		}
-
-		&:hover::before, &:hover::after {
-			opacity: 1;
-			visibility: visible;
-			transform: translateX(-50%);
-		}
-	}
-
-	a {
-		/* replace text with bg color */
-		display: inline-block;
-		overflow: hidden;
-		text-indent: 100%;
-		color: transparent;
-		white-space: nowrap;
-		height: 30px;
-		width: 30px;
-		border-radius: 50%;
-		border: 2px solid $color-3;
-		box-shadow: 0 0 0 2px $color-5;
-		transition: box-shadow .3s;
-	}
-
-	.selected a {
-		box-shadow: 0 0 0 2px $color-4;
-	}
-
-	@include MQ(M) {
-
-		li {
-			margin-right: 1em;
-		}
-
-		a {
-			height: 50px;
-			width: 50px;
-		}
-	}
-}
-
-[data-color="white"] {
-	/* used to give background color to Color options */
-	background-color: #FFFFFF;
-}
-[data-color="blue"] {
-	background-color: #B3CBD2;
-}
-[data-color="orange"] {
-	background-color: #F47835;
-}
-[data-color="pink"] {
-	background-color: #C5637E;
-}
+@import 'partials/colors'; // responsive grid and media queries
 
 /* --------------------------------
 
@@ -654,6 +550,12 @@ Summary Step - style
 		margin: 2em 0;
 	}
 
+	.sokstring li {
+		text-align: left;
+		margin: 0 auto;
+		max-width: 500px;
+	}
+
 	h2 {
 		text-transform: uppercase;
 		font-weight: bold;
@@ -673,16 +575,17 @@ Summary Step - style
 
 	.product-preview {
 		display: block;
-		max-width: 700px;
+		max-width: 300px;
 		width: 100%;
 		margin-bottom: 2em;
 	}
 
 	h3 {
-		font-size: 2.4rem;
-		font-weight: bold;
+		font-size: 1.4rem;
+		font-weight: normal;
 		margin: .4em 0;
 	}
+
 
 	p {
 		color: $color-2;
