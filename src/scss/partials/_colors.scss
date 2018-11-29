@@ -24,7 +24,7 @@ Colors Step - style
 		img {
 			display: block;
 			width: 100%;
-			max-width: 750px;
+			max-width: 500px;
 			margin: 0 auto;
 		}
 	}
@@ -39,6 +39,7 @@ Colors Step - style
 }
 
 .cd-product-customizer {
+	margin: 3rem auto;
 	text-align: center;
 
 	li {
@@ -141,5 +142,5 @@ $color-spring:   #C5637E !default;
 }
 
 [data-theme="sol-strand"] {
-  background-color: $color-summer;
+  border-color: £$color-summer;
 }
