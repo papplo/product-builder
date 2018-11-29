@@ -564,14 +564,14 @@ Colors Step - style
 	/* used to give background color to Color options */
 	background-color: #FFFFFF;
 }
-[data-color="grey"] {
-	background-color: #303539;
+[data-color="blue"] {
+	background-color: #B3CBD2;
 }
 [data-color="orange"] {
-	background-color: #cf5a16;
+	background-color: #F47835;
 }
-[data-color="perl"] {
-	background-color: #d1d1d1;
+[data-color="pink"] {
+	background-color: #C5637E;
 }
 
 /* --------------------------------
@@ -584,7 +584,7 @@ Accessories Step - style
 
 	> li {
 		text-align: center;
-		padding: 2em 1.5em;
+		padding: 1em 1.5em;
 		font-weight: bold;
 	}
 
