@@ -10,6 +10,8 @@
 
 @import 'partials/rangeslider';
 
+@import 'partials/map';
+
 /* --------------------------------
 
 Primary style
@@ -918,10 +920,10 @@ Builder fixed bottom summary
 	.next {
 		z-index: 1;
 		right: 0;
-		background: $color-EcBrand;
+		background: $color-Primary;
 
 		&:hover {
-			background: lighten($color-EcBrand, 5%);
+			background: lighten($color-Primary, 5%);
 		}
 
 		.disabled & {

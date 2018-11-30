@@ -1,14 +1,25 @@
 // colors
 
-$color-1: #24221F; // Dune
-$color-Headings: #363636; // Dune
-$color-legend: #5D7C89;
-$color-warn: #E04D69;
-$color-EcBrand:#009BC5;
-$color-2: #5D7C89; // Lynch
-$color-3: #ffffff; // White
-$color-4: #FFB500; // Selective Yellow
-$color-5: #EDEDED; // Gallery
+
+$color-EcBlue:    #009BC5;
+$color-EcRed:     #AF2127;
+$color-EcTeal:    #187698;
+$color-EcOrange:  #F5A623;
+
+$color-Headings:   #363636; // Dune
+$color-legend:     #5D7C89;
+$color-warn:       $color-EcRed;
+
+$color-Primary:    $color-EcBlue;
+$color-Secondary:  $color-EcRed;
+$color-Action:     $color-EcOrange;
+$color-PrimeDark:  $color-EcTeal;
+
+$color-1:           #24221F;
+$color-2:           #5D7C89; // Lynch
+$color-3:           #ffffff; // White
+$color-4:           #F5A623; // Selective Yellow
+$color-5:           #EDEDED; // Gallery
 
 // fonts
 
