@@ -7,11 +7,11 @@ var rangeSlider = function(){
 
     value.each(function(){
       var value = $(this).prev().attr('value');
-      $(this).html('Upp till ' + value);
+      $(this).html('Pris per natt: ' + value);
     });
 
     range.on('input', function(){
-      $(this).next(value).html('Upp till ' + this.value);
+      $(this).next(value).html('Pris per natt: ' + this.value);
     });
   });
 };

@@ -6,7 +6,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="css/vendor/reset.css"> <!-- CSS reset -->
 	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
-
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
 	<title>Ui-example: Guidat Sök</title>
 </head>
 <body>
@@ -105,6 +105,7 @@
 						</li>
 
 					</ul>
+					<div id="map"></div>
 				</section>
 			</li>
 			<!-- additional content will be inserted using ajax -->
@@ -150,5 +151,15 @@
 </script>
 <script src="js/main.js"></script> <!-- Resource jQuery -->
 <script src="js/range.js"></script>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoicGFibG9hbnR0aWxhIiwiYSI6ImNqaTV5dG9tNTBodzUzd281ZnpxY3d2cnQifQ.RkJwqne1qjRywytMWzklSw';
+const map = new mapboxgl.Map({
+	container: 'map',
+	style: 'mapbox://styles/pabloanttila/cjp2jgosr0pnr2sosj4vhv75j',
+	center: [11.000000, 42.000000],
+	zoom: 3.0
+});
+</script>
 </body>
 </html>

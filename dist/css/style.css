@@ -1,24 +1,14 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=PT+Sans+Narrow:700|PT+Sans:400,400i,700|Source+Sans+Pro:300");
-*, *:before, *:after {
-  box-sizing: border-box; }
-
-body {
-  font-family: sans-serif;
-  padding: 60px 20px; }
-  @media (min-width: 600px) {
-    body {
-      padding: 60px; } }
+.range-slider {
+  margin: 3em auto; }
 
 .range-slider {
-  margin: 60px 0 0 0%; }
-
-.range-slider {
-  width: 100%; }
+  width: 550px; }
 
 .range-slider__range {
   -webkit-appearance: none;
-  width: calc(100% - (273px));
+  width: 100%;
   height: 15px;
   border-radius: 5px;
   background: #009BC5;
@@ -34,9 +24,9 @@ body {
     cursor: pointer;
     transition: background .15s ease-in-out; }
     .range-slider__range::-webkit-slider-thumb:hover {
-      background: #009BC5; }
+      background: #fff; }
   .range-slider__range:active::-webkit-slider-thumb {
-    background: #009BC5; }
+    background: #fff; }
   .range-slider__range::-moz-range-thumb {
     width: 40px;
     height: 40px;
@@ -46,16 +36,15 @@ body {
     cursor: pointer;
     transition: background .15s ease-in-out; }
     .range-slider__range::-moz-range-thumb:hover {
-      background: #009BC5; }
+      background: #fff; }
   .range-slider__range:active::-moz-range-thumb {
-    background: #009BC5; }
+    background: #fff; }
   .range-slider__range:focus::-webkit-slider-thumb {
-    box-shadow: 0 0 0 3px #fff, 0 0 0 6px #1abc9c; }
+    box-shadow: 0 0 0 3px #fff, 0 0 0 6px #009BC5; }
 
 .range-slider__value {
   display: block;
   position: relative;
-  width: 260px;
   color: #009BC5;
   line-height: 55px;
   text-align: center;
@@ -71,6 +60,13 @@ body {
 input::-moz-focus-inner,
 input::-moz-focus-outer {
   border: 0; }
+
+#map {
+  position: relative;
+  margin: 1em auto;
+  bottom: 0;
+  width: 750px;
+  height: 400px; }
 
 /* --------------------------------
 
@@ -216,7 +212,7 @@ Step content - basic style
     cursor: pointer;
     transition: border-color .3s; }
     .cd-step-content .options-list > li.selected {
-      border-color: #FFB500; }
+      border-color: #F5A623; }
   .cd-step-content .radio, .cd-step-content .check {
     position: relative;
     display: inline-block;
@@ -246,8 +242,8 @@ Step content - basic style
   .cd-step-content .check::before {
     border-radius: 4px; }
   .cd-step-content .selected .radio::before, .cd-step-content .selected .check::before {
-    background: #FFB500;
-    border-color: #FFB500;
+    background: #F5A623;
+    border-color: #F5A623;
     transform: scale(1.5);
     animation: cd-bounce .5s; }
   .active .cd-step-content {
@@ -381,13 +377,13 @@ Models Step - style
     /* show a loading animation while you wait for the HTML to be loaded */
     background: transparent;
     border-color: #EDEDED;
-    border-right-color: #FFB500;
+    border-right-color: #F5A623;
     transform: scale(1);
     animation: cd-load .6s infinite; }
   .cd-builder-steps .models-list .selected.loaded .radio::before {
     /* content has been loaded - show the yellow circle + check icon */
-    background: #FFB500;
-    border-color: #FFB500;
+    background: #F5A623;
+    border-color: #F5A623;
     transform: scale(1.5);
     animation: cd-bounce .5s; }
 
@@ -478,7 +474,7 @@ Colors Step - style
     box-shadow: 0 0 0 2px #EDEDED;
     transition: box-shadow .3s; }
   .cd-product-customizer .selected a {
-    box-shadow: 0 0 0 2px #FFB500; }
+    box-shadow: 0 0 0 2px #F5A623; }
   @media only screen and (min-width: 768px) {
     .cd-product-customizer li {
       margin-right: 1em; }
@@ -703,12 +699,12 @@ Builder top navigation
     border-bottom: 2px solid transparent;
     transition: color .2s, border-color .2s; }
     .cd-builder-main-nav a:hover {
-      color: #FFB500; }
+      color: #F5A623; }
   .cd-builder-main-nav .active a {
-    border-color: #FFB500;
-    color: #FFB500; }
+    border-color: #F5A623;
+    color: #F5A623; }
     .cd-builder-main-nav .active a:hover {
-      color: #FFB500; }
+      color: #F5A623; }
   .cd-builder-main-nav.disabled li:not(.active) a {
     color: #5D7C89; } }
 
@@ -789,7 +785,7 @@ Builder fixed bottom summary
         font-size: 1.4rem;
         transform: translateX(-50%) translateY(-50%);
         transition: top .2s;
-        background: #E04D69;
+        background: #AF2127;
         color: #ffffff;
         padding: .8em 1em;
         border-radius: 4px; }
